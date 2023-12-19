@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide the scrollbar for Firefox */
+.scroll-hide {
+  scrollbar-width: thin;
+}
+
+@keyframes descend {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.descend {
+  animation: descend 3s forwards ease-in-out;
+}
+
+@keyframes ascend {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.ascend {
+  animation: ascend 3s forwards ease-in-out;
+}
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.left-to-right {
+  animation: left-to-right 3s forwards ease-in-out;
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.right-to-left {
+  animation: right-to-left 3s forwards ease-in-out;
+}
