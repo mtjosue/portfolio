@@ -247,21 +247,21 @@ export default AnimatedNav;
 //     building lasting connections. I believe in fostering meaningful
 //     relationships both in and outside the realm of development.
 //   </span>
-//   <span>
-//     At 31, I carry the spirit of an old and wise breakdancer,
-//     keeping the rhythm alive. Dance has been my first love, and I
-//     stay active by embracing its joy throughout the week. Staying
-//     active is essential for long-term well-being, especially when
-//     the work involves long hours of sitting.
-//   </span>
-//   <span>
-//     In my personal haven, two loving cats, Onyx and Nova, add joy to
-//     each day. Beyond that, I'm blessed with a beautiful fiancée who
-//     fills my life with love and happiness.
-//   </span>
-//   <span>
-//     Let's connect, create, and share the experience together!
-//   </span>
+// <span>
+//   At 31, I carry the spirit of an old and wise breakdancer,
+//   keeping the rhythm alive. Dance has been my first love, and I
+//   stay active by embracing its joy throughout the week. Staying
+//   active is essential for long-term well-being, especially when
+//   the work involves long hours of sitting.
+// </span>
+// <span>
+// In my personal haven, two loving cats, Onyx and Nova, add joy to
+// each day. Beyond that, I'm blessed with a beautiful fiancée who
+// fills my life with love and happiness.
+// </span>
+// <span>
+// Let's connect, create, and share the experience together!
+// </span>
 // </span>
 
 {

@@ -38,7 +38,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className="w-screen bg-gradient-to-b from-slate-900 to-slate-700 text-gray-300"
+        className="w-screen bg-gradient-to-b from-slate-900 to-slate-700"
         style={{
           height: `${height}px`,
         }}
