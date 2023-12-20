@@ -129,20 +129,36 @@ const SecondHome = () => {
     top: 10,
     left: 0,
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 1120 ? 1 : 0,
+    opacity: conPosition > 1160 ? 1 : 0,
     transform: `translate(-${Math.min(
-      conPosition > 1120 ? (conPosition - 1120) * 6 : 0,
+      conPosition > 1160 ? (conPosition - 1160) * 6 : 0,
       width / 2 - elWidth,
     )}px, -${Math.min(
-      conPosition > 1120 ? (conPosition - 1120) * 6 : 0,
+      conPosition > 1160 ? (conPosition - 1160) * 6 : 0,
       80,
     )}px) rotate(${
-      180 - Math.min(conPosition > 1120 ? (conPosition - 1120) * 3 : 0, 180)
+      180 - Math.min(conPosition > 1160 ? (conPosition - 1160) * 3 : 0, 180)
     }deg)`,
   });
 
   // console.log("curVisible : ", curVis);
   // console.log("isVisible2 : ", isVisible2);
+
+  const subtractedWidth = width < 1024 ? conPosition * 0.4 : conPosition * 4;
+
+  const { width: animatedWidth } = useSpring({
+    from: { width: "0%" }, // Start with full width
+    to: { width: `calc(${isVisible1 ? "100%" : "0%"})` },
+    config: { duration: 800 },
+    delay: 1750,
+  });
+
+  const { width: animatedWidth2 } = useSpring({
+    from: { width: "0%" },
+    to: { width: `calc(${isVisible1 ? "100%" : "0%"})` },
+    config: { duration: 800 },
+    delay: 1750,
+  });
 
   return (
     <div className="relative h-full w-full text-lg text-gray-300">
@@ -249,8 +265,41 @@ const SecondHome = () => {
           )}
         >
           <div
+            className="absolute flex justify-end"
+            style={{ width: "100%", height: "2px", top: `${height - 139}px` }}
+          >
+            <div className="" style={{ width: "44%", height: "2px" }}>
+              <animated.div
+                className={classNames("bg-gray-400")}
+                style={{
+                  height: "100%",
+                  width: animatedWidth.to((w) => `${w}`),
+                }}
+              />
+            </div>
+          </div>
+
+          <div
+            className="absolute"
+            style={{ width: "100%", height: "2px", top: `${height + 184}px` }}
+          >
+            <div
+              className=""
+              style={{ width: "44%", height: "2px", direction: "rtl" }}
+            >
+              <animated.div
+                className={classNames("bg-gray-400")}
+                style={{
+                  height: "100%",
+                  width: animatedWidth2.to((w) => `${w}`),
+                }}
+              />
+            </div>
+          </div>
+
+          <div
             ref={ref1 as React.RefObject<HTMLDivElement>}
-            className="w-[16rem] space-y-1"
+            className=" w-[16rem] space-y-1"
           >
             {isVisible1 && (
               <h1
@@ -275,13 +324,21 @@ const SecondHome = () => {
                   <br />
                   Eager for challenging tasks.
                 </div>
+
                 <div
                   className="rounded-lg"
                   style={{
                     animation: `right-to-left 2s ease-in-out forwards`,
                   }}
                 >
-                  <Image src={pic} alt="" className="flex-grow rounded-lg" />
+                  <Image
+                    src={pic}
+                    alt=""
+                    className={classNames(
+                      "flex-grow rounded-lg",
+                      // "opacity-0"
+                    )}
+                  />
                 </div>
               </div>
             )}
@@ -331,8 +388,8 @@ const SecondHome = () => {
             <span className="font-bold">
               Hello! I'm a results-driven individual with a passion for both art
               and science. Technology has always captivated me, and about three
-              years ago, I took the leap into unraveling the mysteries of the
-              internet of things.
+              years ago, I took the leap into unraveling the "hows" of
+              developing for the internet.
             </span>
           </animated.div>
         </div>
