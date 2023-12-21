@@ -58,6 +58,7 @@ const SecondHome = () => {
   }, []);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     const handleScrollCon = () => {
       if (conRef.current) {
         console.log("Con Top: ", conRef.current.scrollTop);
@@ -531,7 +532,7 @@ const SecondHome = () => {
                 <div className="mb-3 space-y-3">
                   <div className="text-xl font-semibold">Ntornos</div>
                   <div className="max-w-sm text-base">
-                    A modern real-estate platform for developing countries.
+                    A Modern Real-Estate Platform for developing countries.
                   </div>
                 </div>
                 <div
@@ -558,7 +559,7 @@ const SecondHome = () => {
                 <div className="mb-3 space-y-3">
                   <div className="text-xl font-semibold">305gm</div>
                   <div className="max-w-sm text-base">
-                    Modern styled product landing pages using Tailwind CSS.
+                    Advanced Styled Product Landing Pages using Tailwind CSS.
                   </div>
                 </div>
                 <div
