@@ -1,15 +1,15 @@
 // import Link from "next/link";
 import { FolderIcon, HomeIcon, UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import classNames from "~/lib/classNames";
 import { useIsVisible } from "~/lib/useIsVisible";
 import pic from "../../public/profilePic.jpeg";
-// import sunset from "../../public/sunset-404072_640.jpg";
 import linkedin from "../../public/icons8-linkedin-48.png";
 import github from "../../public/icons8-github-48.png";
-
+import pixelmate from "../../public/PixelmateThumbnail.png";
+import ntornos from "../../public/ntornosThumbnail.png";
+import gm3052 from "../../public/secondtry.png";
 import { useSpring, animated } from "react-spring";
 
 const SecondHome = () => {
@@ -38,7 +38,7 @@ const SecondHome = () => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [conPosition, setConPosition] = useState(0);
-  const [width, setWidth] = useState(0);
+  const [halfWidth, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [elWidth, setElWidth] = useState(0);
 
@@ -47,28 +47,27 @@ const SecondHome = () => {
       setElWidth(myElementRef.current.offsetWidth / 2);
     }
     setHeight(window.innerHeight / 2);
+    const updateWindowHeight = () => {
+      setHeight(window.innerHeight / 2);
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", updateWindowHeight);
+    return () => {
+      window.removeEventListener("resize", updateWindowHeight);
+    };
   }, []);
 
   useEffect(() => {
-    // console.log("innerWidth", window.innerWidth / 2);
-    setWidth(window.innerWidth);
-    const handleScroll = () => {
-      if (ref2.current) {
-        // console.log("Scroll Top: ", ref2.current.scrollTop);
-        setScrollPosition(ref2.current.scrollTop);
-      }
-    };
     const handleScrollCon = () => {
       if (conRef.current) {
         console.log("Con Top: ", conRef.current.scrollTop);
         setConPosition(conRef.current.scrollTop);
       }
     };
-    // window.addEventListener("scroll", handleScroll);
-    ref2.current?.addEventListener("scroll", handleScroll);
+
     conRef.current?.addEventListener("scroll", handleScrollCon);
+
     return () => {
-      ref2.current?.removeEventListener("scroll", handleScroll);
       conRef.current?.removeEventListener("scroll", handleScrollCon);
     };
   }, []);
@@ -78,10 +77,10 @@ const SecondHome = () => {
     top: 10,
     left: 0,
     config: { tension: 90, friction: 15 },
-    opacity: conPosition > 155 ? 1 : 0,
+    opacity: conPosition > 155 && conPosition < 776 ? 1 : 0,
     transform: `translate(${Math.min(
       conPosition > 130 ? (conPosition - 130) * 6 : 0,
-      width / 2 - elWidth,
+      halfWidth / 2 - elWidth,
     )}px, ${Math.min(
       conPosition > 130 ? (conPosition - 130) * 6 : 0,
       80,
@@ -95,10 +94,10 @@ const SecondHome = () => {
     top: 10,
     left: 0,
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 610 ? 1 : 0,
+    opacity: conPosition > 610 && conPosition < 1135 ? 1 : 0,
     transform: `translate(-${Math.min(
       conPosition > 610 ? (conPosition - 610) * 6 : 0,
-      width / 2 - elWidth,
+      halfWidth / 2 - elWidth,
     )}px, ${Math.min(
       conPosition > 610 ? (conPosition - 610) * 6 : 0,
       80,
@@ -112,10 +111,10 @@ const SecondHome = () => {
     top: 10,
     left: 0,
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 950 ? 1 : 0,
+    opacity: conPosition > 950 && conPosition < 1360 ? 1 : 0,
     transform: `translate(${Math.min(
       conPosition > 950 ? (conPosition - 950) * 6 : 0,
-      width / 2 - elWidth,
+      halfWidth / 2 - elWidth,
     )}px, -${Math.min(
       conPosition > 950 ? (conPosition - 950) * 6 : 0,
       80,
@@ -129,10 +128,10 @@ const SecondHome = () => {
     top: 10,
     left: 0,
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 1160 ? 1 : 0,
+    opacity: conPosition > 1160 && conPosition < 1500 ? 1 : 0,
     transform: `translate(-${Math.min(
       conPosition > 1160 ? (conPosition - 1160) * 6 : 0,
-      width / 2 - elWidth,
+      halfWidth / 2 - elWidth,
     )}px, -${Math.min(
       conPosition > 1160 ? (conPosition - 1160) * 6 : 0,
       80,
@@ -141,10 +140,14 @@ const SecondHome = () => {
     }deg)`,
   });
 
+  // fifth animated.div
+  const { opacity: opa5 } = useSpring({
+    config: { tension: 50, friction: 10 },
+    opacity: conPosition > 1501 ? 1 : 0,
+  });
+
   // console.log("curVisible : ", curVis);
   // console.log("isVisible2 : ", isVisible2);
-
-  const subtractedWidth = width < 1024 ? conPosition * 0.4 : conPosition * 4;
 
   const { width: animatedWidth } = useSpring({
     from: { width: "0%" }, // Start with full width
@@ -162,7 +165,12 @@ const SecondHome = () => {
 
   return (
     <div className="relative h-full w-full text-lg text-gray-300">
-      <div className="absolute bottom-3 right-3 z-50 font-bold md:bottom-[50vh]">
+      <div
+        className={classNames(
+          "absolute bottom-3 right-2.5 font-bold md:bottom-[50vh] md:right-[3vw]",
+          "z-50",
+        )}
+      >
         <div className="relative flex flex-col gap-y-7 text-slate-500">
           <div className="absolute right-[3px] h-full border-r-2 border-slate-500" />
           <button
@@ -204,14 +212,18 @@ const SecondHome = () => {
               });
             }}
             className={classNames(
-              conPosition >= height + 236 ? "text-slate-200" : "",
+              conPosition >= height + 236 && conPosition < height + 1017
+                ? "text-slate-200"
+                : "",
               "flex items-center justify-end gap-x-2",
             )}
           >
             <span
               className={classNames(
                 "text-sm transition-all duration-500 ease-in-out ",
-                conPosition >= height + 236 ? "opacity-100" : "opacity-0",
+                conPosition >= height + 236 && conPosition < height + 1017
+                  ? "opacity-100"
+                  : "opacity-0",
               )}
             >
               <UserIcon className="h-5 w-5" strokeWidth={2} />
@@ -221,22 +233,29 @@ const SecondHome = () => {
               className={classNames(
                 "transition-all duration-500 ease-in-out",
                 "relative h-2 w-2 rounded-full",
-                conPosition >= height + 236 ? "bg-slate-200" : "bg-slate-500",
+                conPosition >= height + 236 && conPosition < height + 1017
+                  ? "bg-slate-200"
+                  : "bg-slate-500",
               )}
             />
           </button>
-
-          <a
-            href="#3"
+          <button
+            onClick={() => {
+              conRef.current?.scrollTo({
+                top: height + 1400, // Specify the vertical scroll position in pixels
+                left: 0, // Specify the horizontal scroll position in pixels
+                behavior: "smooth", // Optional: Use smooth scrolling
+              });
+            }}
             className={classNames(
-              isVisible3 ? "text-slate-200" : "",
+              conPosition >= height + 1017 ? "text-slate-200" : "",
               "flex items-center justify-end gap-x-2",
             )}
           >
             <span
               className={classNames(
                 "text-sm transition-all duration-500 ease-in-out ",
-                isVisible3 ? "opacity-100" : "opacity-0",
+                conPosition >= height + 1017 ? "opacity-100" : "opacity-0",
               )}
             >
               <FolderIcon className="h-5 w-5" strokeWidth={2} />
@@ -246,10 +265,10 @@ const SecondHome = () => {
               className={classNames(
                 "transition-all duration-500 ease-in-out",
                 "relative h-2 w-2 rounded-full",
-                isVisible3 ? "bg-slate-200" : "bg-slate-500",
+                conPosition >= height + 1017 ? "bg-slate-200" : "bg-slate-500",
               )}
             />
-          </a>
+          </button>
         </div>
       </div>
 
@@ -299,7 +318,7 @@ const SecondHome = () => {
 
           <div
             ref={ref1 as React.RefObject<HTMLDivElement>}
-            className=" w-[16rem] space-y-1"
+            className="w-[16rem] space-y-1"
           >
             {isVisible1 && (
               <h1
@@ -334,10 +353,7 @@ const SecondHome = () => {
                   <Image
                     src={pic}
                     alt=""
-                    className={classNames(
-                      "flex-grow rounded-lg",
-                      // "opacity-0"
-                    )}
+                    className={classNames("flex-grow rounded-lg")}
                   />
                 </div>
               </div>
@@ -454,27 +470,114 @@ const SecondHome = () => {
           </animated.div>
         </div>
 
-        <div className="h-[120vh] w-full" />
-        {/* <div
-          id="2"
-          ref={ref2 as React.RefObject<HTMLDivElement>}
-          className={classNames(
-              !isVisible1 && "overflow-auto",
-              "scroll-hide relative mt-1 h-full w-full",
+        <div className="relative flex h-[100vh] w-full flex-col items-center justify-center">
+          <h2
+            className={classNames(
+              "absolute top-5 font-extralight",
+              `left-[${halfWidth}]`,
+            )}
+          >
+            <animated.div
+              className={classNames("")}
+              style={{
+                opacity: opa5,
+              }}
+            >
+              Work History
+            </animated.div>
+          </h2>
+          <div
+            className={classNames(
+              "scroll-hide flex w-screen snap-x snap-mandatory overflow-x-auto",
+            )}
+          >
+            <animated.div
+              style={{
+                opacity: opa5,
+              }}
+              className={classNames(
+                "flex w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-3 rounded-md px-12",
               )}
-              >
-              <div className="h-[100vh]"></div>
-              <div className="h-[100vh] bg-slate-700"></div>
-            </div> */}
+            >
+              <div className="flex flex-col">
+                <div className="mb-3 space-y-3">
+                  <div className="text-xl font-semibold">Pixelmate</div>
+                  <div className="max-w-sm text-base">
+                    A Gamified Social Platform for meeting and chatting with
+                    people.
+                  </div>
+                </div>
+                <div
+                  style={{
+                    maxHeight: `${
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10
+                    }px`,
+                  }}
+                  className={`scroll-hide w-fit overflow-y-auto rounded-md`}
+                >
+                  <Image src={pixelmate} alt="" />
+                </div>
+              </div>
+            </animated.div>
+            <animated.div
+              style={{
+                opacity: opa5,
+              }}
+              className={classNames(
+                "flex w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-3 px-12",
+              )}
+            >
+              <div className="flex flex-col">
+                <div className="mb-3 space-y-3">
+                  <div className="text-xl font-semibold">Ntornos</div>
+                  <div className="max-w-sm text-base">
+                    A modern real-estate platform for developing countries.
+                  </div>
+                </div>
+                <div
+                  style={{
+                    maxHeight: `${
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10
+                    }px`,
+                  }}
+                  className={`scroll-hide w-fit overflow-y-auto rounded-md`}
+                >
+                  <Image src={ntornos} alt="" />
+                </div>
+              </div>
+            </animated.div>
+            <animated.div
+              style={{
+                opacity: opa5,
+              }}
+              className={classNames(
+                "flex w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-3 rounded-md px-12",
+              )}
+            >
+              <div className="flex flex-col">
+                <div className="mb-3 space-y-3">
+                  <div className="text-xl font-semibold">305gm</div>
+                  <div className="max-w-sm text-base">
+                    Modern styled product landing pages using Tailwind CSS.
+                  </div>
+                </div>
+                <div
+                  style={{
+                    maxHeight: `${
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10
+                    }px`,
+                  }}
+                  className={`scroll-hide w-fit overflow-y-auto rounded-md`}
+                >
+                  <Image src={gm3052} alt="" />
+                </div>
+              </div>
+            </animated.div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default SecondHome;
-
-// Hello! I'm a results-driven individual with a profound passion for
-// the intersection of art and science. Technology has always
-// captivated me, and about three years ago, I took the leap into
-// unraveling the mysteries of the internet of things. Life has been a
-// journey of growth, aiming to be of value to others.
