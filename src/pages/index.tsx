@@ -1,21 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
-import AnimatedContent from "~/components/AnimatedContent";
-import AnimatedNav from "~/components/AnimatedNav";
 import HomePage from "~/components/HomePage";
-import SecondHome from "~/components/SecondHome";
-import HomePageComponent from "~/components/home";
-import { api } from "~/utils/api";
 
 export default function Home() {
-  // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   const [height, setHeight] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       setHeight(window.innerHeight);
-      console.log("window.innerHeight", window.innerHeight);
     };
 
     // Initial adjustment
@@ -38,13 +31,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className="w-screen bg-gradient-to-b from-slate-900 to-slate-700 text-gray-300"
+        className="w-screen bg-gradient-to-b from-slate-900 to-slate-700"
         style={{
           height: `${height}px`,
         }}
       >
-        {/* <HomePage /> */}
-        <SecondHome />
+        <HomePage />
       </main>
     </>
   );

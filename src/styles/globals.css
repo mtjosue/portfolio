@@ -23,7 +23,7 @@
 }
 
 .descend {
-  animation: descend 3s forwards ease-in-out;
+  animation: descend 1.7s forwards ease-in-out;
 }
 
 @keyframes ascend {
@@ -38,7 +38,7 @@
 }
 
 .ascend {
-  animation: ascend 3s forwards ease-in-out;
+  animation: ascend 1.7s forwards ease-in-out;
 }
 @keyframes left-to-right {
   0% {
@@ -52,7 +52,7 @@
 }
 
 .left-to-right {
-  animation: left-to-right 3s forwards ease-in-out;
+  animation: left-to-right 1.7s forwards ease-in-out;
 }
 
 @keyframes right-to-left {
@@ -67,5 +67,25 @@
 }
 
 .right-to-left {
-  animation: right-to-left 3s forwards ease-in-out;
+  animation: right-to-left 1.7s forwards ease-in-out;
+}
+
+@keyframes bounceHorizontal {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(10px); /* Adjusted to move to the right */
+  }
+  60% {
+    transform: translateX(0);
+  }
+}
+
+.animate-bounce-horizontal {
+  animation: bounceHorizontal 2s infinite ease-in-out;
 }
