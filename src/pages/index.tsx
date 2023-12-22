@@ -1,21 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
-import AnimatedContent from "~/components/AnimatedContent";
-import AnimatedNav from "~/components/AnimatedNav";
 import HomePage from "~/components/HomePage";
-import SecondHome from "~/components/SecondHome";
-import HomePageComponent from "~/components/home";
-import { api } from "~/utils/api";
 
 export default function Home() {
-  // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   const [height, setHeight] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       setHeight(window.innerHeight);
-      console.log("window.innerHeight", window.innerHeight);
     };
 
     // Initial adjustment
@@ -43,8 +36,7 @@ export default function Home() {
           height: `${height}px`,
         }}
       >
-        {/* <HomePage /> */}
-        <SecondHome />
+        <HomePage />
       </main>
     </>
   );
