@@ -4,8 +4,9 @@ import {
   FolderIcon,
   HomeIcon,
   UserIcon,
+  WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import classNames from "~/lib/classNames";
 import { useIsVisible } from "~/lib/useIsVisible";
@@ -17,6 +18,18 @@ import ntornos from "../../public/ntornosThumbnail.png";
 import gm3052 from "../../public/secondtry.png";
 import { useSpring, animated } from "react-spring";
 import { useRouter } from "next/router";
+import cssLogo from "../../public/skills/icons8-css3-48.png";
+import jsLogo from "../../public/skills/icons8-javascript-48.png";
+import reduxLogo from "../../public/skills/icons8-redux-48.png";
+import nodeLogo from "../../public/skills/icons8-nodejs-48.png";
+import mongoLogo from "../../public/skills/icons8-mongodb-48.png";
+import typeLogo from "../../public/skills/icons8-typescript-48.png";
+import nextLogo from "../../public/skills/icons8-next.js-48.png";
+import tailwindLogo from "../../public/skills/icons8-tailwindcss-48.png";
+import prismaLogo from "../../public/skills/icons8-prisma-orm-48.png";
+import trpcLogo from "../../public/skills/trpcLogo2.svg";
+import zusLogo from "../../public/skills/zustandLogo.png";
+import reactLogo from "../../public/skills/React-icon.svg.png";
 
 const Home = () => {
   const ref1 = useRef<HTMLElement>(null);
@@ -51,6 +64,7 @@ const Home = () => {
     const handleScrollCon = () => {
       if (conRef.current) {
         setConPosition(conRef.current.scrollTop);
+        // console.log("(conRef.current.scrollTop)", conRef.current.scrollTop);
       }
     };
 
@@ -135,17 +149,23 @@ const Home = () => {
     opacity: conPosition > 1501 ? 1 : 0,
   });
 
+  // fifth.5 animated.div
+  const { opacity: opa5half } = useSpring({
+    config: { tension: 50, friction: 10 },
+    opacity: conPosition > 2000 ? 1 : 0,
+  });
+
   // sixth animated.div
   const { opacity: opa6 } = useSpring({
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 1501 && left <= halfWidth / 2 ? 1 : 0,
+    opacity: conPosition > 2001 && left <= halfWidth / 2 ? 1 : 0,
   });
 
   // seventh animated.div
   const { opacity: opa7 } = useSpring({
     config: { tension: 50, friction: 10 },
     opacity:
-      conPosition > 1501 && left > halfWidth / 2 && left < halfWidth * 1.5
+      conPosition > 2001 && left > halfWidth / 2 && left < halfWidth * 1.5
         ? 1
         : 0,
   });
@@ -153,13 +173,13 @@ const Home = () => {
   // eighth animated.div
   const { opacity: opa8 } = useSpring({
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 1501 && left > halfWidth * 1.5 ? 1 : 0,
+    opacity: conPosition > 2001 && left > halfWidth * 1.5 ? 1 : 0,
   });
 
   // ninth animated.div
   const { opacity: opa9 } = useSpring({
     config: { tension: 50, friction: 10 },
-    opacity: conPosition > 1501 && left < 1700 ? 1 : 0,
+    opacity: conPosition > 2001 && left < 1700 ? 1 : 0,
   });
 
   const { width: animatedWidth } = useSpring({
@@ -180,6 +200,7 @@ const Home = () => {
     const handleScrollCon = () => {
       if (refTest.current) {
         setLeft(refTest.current.scrollLeft);
+        // console.log("refTest.current.scrollLeft", refTest.current.scrollLeft);
       }
     };
 
@@ -194,7 +215,7 @@ const Home = () => {
     <div className="relative h-full w-full text-lg text-gray-300">
       <div
         className={classNames(
-          "absolute bottom-3 right-2.5 font-bold md:bottom-[50vh] md:right-[3vw]",
+          "absolute bottom-3 right-2.5 font-bold md:bottom-[45vh] md:right-[3vw]",
           "z-50",
         )}
       >
@@ -269,20 +290,56 @@ const Home = () => {
           <button
             onClick={() => {
               conRef.current?.scrollTo({
-                top: height + 1400, // Specify the vertical scroll position in pixels
+                top: height + 1325, // Specify the vertical scroll position in pixels
                 left: 0, // Specify the horizontal scroll position in pixels
                 behavior: "smooth", // Optional: Use smooth scrolling
               });
             }}
             className={classNames(
-              conPosition >= height + 1017 ? "text-slate-200" : "",
+              conPosition >= height + 1017 && conPosition < height + 2117
+                ? "text-slate-200"
+                : "",
               "flex items-center justify-end gap-x-2",
             )}
           >
             <span
               className={classNames(
                 "text-sm transition-all duration-500 ease-in-out ",
-                conPosition >= height + 1017 ? "opacity-100" : "opacity-0",
+                conPosition >= height + 1017 && conPosition < height + 2117
+                  ? "opacity-100"
+                  : "opacity-0",
+              )}
+            >
+              <WrenchScrewdriverIcon className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <div
+              id="bullet"
+              className={classNames(
+                "transition-all duration-500 ease-in-out",
+                "relative h-2 w-2 rounded-full",
+                conPosition >= height + 1017 && conPosition < height + 2117
+                  ? "bg-slate-200"
+                  : "bg-slate-500",
+              )}
+            />
+          </button>
+          <button
+            onClick={() => {
+              conRef.current?.scrollTo({
+                top: height + 2400, // Specify the vertical scroll position in pixels
+                left: 0, // Specify the horizontal scroll position in pixels
+                behavior: "smooth", // Optional: Use smooth scrolling
+              });
+            }}
+            className={classNames(
+              conPosition >= height + 1500 ? "text-slate-200" : "",
+              "flex items-center justify-end gap-x-2",
+            )}
+          >
+            <span
+              className={classNames(
+                "text-sm transition-all duration-500 ease-in-out ",
+                conPosition >= height + 1500 ? "opacity-100" : "opacity-0",
               )}
             >
               <FolderIcon className="h-5 w-5" strokeWidth={2} />
@@ -292,7 +349,7 @@ const Home = () => {
               className={classNames(
                 "transition-all duration-500 ease-in-out",
                 "relative h-2 w-2 rounded-full",
-                conPosition >= height + 1017 ? "bg-slate-200" : "bg-slate-500",
+                conPosition >= height + 1500 ? "bg-slate-200" : "bg-slate-500",
               )}
             />
           </button>
@@ -407,11 +464,13 @@ const Home = () => {
             )}
           </div>
         </div>
+
         {isVisible1 && (
           <div className="absolute bottom-3 z-10 flex w-full justify-center">
             <ArrowDownCircleIcon className="h-9 w-9 animate-bounce text-gray-400 opacity-30" />
           </div>
         )}
+
         {height && (
           <div
             className={classNames("w-full")}
@@ -512,6 +571,89 @@ const Home = () => {
               className={classNames("")}
               style={{
                 opacity: opa5,
+              }}
+            >
+              Skills
+            </animated.div>
+          </h2>
+          <animated.div
+            className="grid grid-cols-2 gap-x-12 gap-y-3"
+            style={{
+              opacity: opa5,
+            }}
+          >
+            <div className="col-span-1 space-y-6">
+              <div className="flex flex-col items-center justify-center">
+                <Image src={nextLogo} alt="" className="h-12 w-12" />
+                <div>Next.js</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={typeLogo} alt="" className="h-12 w-12" />
+                <div>Typescript</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image
+                  src={trpcLogo as StaticImageData}
+                  alt=""
+                  className="h-12 w-12"
+                />
+                <div>tRPC</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={prismaLogo} alt="" className="h-12 w-12" />
+                <div>Prisma</div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <Image src={zusLogo} alt="" className="w-[96px]" />
+                <div>Zustand</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={tailwindLogo} alt="" className="h-12 w-12" />
+                <div>Tailwind</div>
+              </div>
+            </div>
+            <div className="col-span-1 space-y-6">
+              <div className="flex flex-col items-center justify-center">
+                <Image src={reactLogo} alt="" className="h-12 w-12" />
+                <div>React</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={jsLogo} alt="" className="h-12 w-12" />
+                <div>Javascript</div>
+              </div>
+              <div className="flex flex-col items-center justify-center ">
+                <Image src={nodeLogo} alt="" className="h-12 w-12" />
+                <div>Nodejs</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={mongoLogo} alt="" className="h-12 w-12" />
+                <div>MongoDB</div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-y-2">
+                <Image src={reduxLogo} alt="" className="h-12 w-12" />
+                <div>Redux</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={cssLogo} alt="" className="h-12 w-12" />
+                <div>CSS</div>
+              </div>
+            </div>
+          </animated.div>
+        </div>
+
+        <div className="relative flex h-[100vh] w-full flex-col items-center justify-center">
+          <h2
+            className={classNames(
+              "absolute top-5 font-extralight",
+              `left-[${halfWidth}]`,
+            )}
+          >
+            <animated.div
+              className={classNames("")}
+              style={{
+                opacity: opa5half,
               }}
             >
               Work History
