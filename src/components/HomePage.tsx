@@ -450,16 +450,23 @@ const Home = () => {
                   animation: `ascend 2s ease-in-out forwards`,
                 }}
               >
-                <Image
-                  className="h-12 w-12 hover:animate-pulse "
-                  src={github}
-                  alt=""
-                />
-                <Image
-                  className="h-12 w-12 hover:animate-pulse "
-                  src={linkedin}
-                  alt=""
-                />
+                <a href="https://github.com/mtjosue" target="_blank">
+                  <Image
+                    className="h-12 w-12 hover:animate-pulse "
+                    src={github}
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/josue-mata-2aba2b232/"
+                  target="_blank"
+                >
+                  <Image
+                    className="h-12 w-12 hover:animate-pulse "
+                    src={linkedin}
+                    alt=""
+                  />
+                </a>
               </div>
             )}
           </div>
