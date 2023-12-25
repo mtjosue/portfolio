@@ -593,13 +593,13 @@ const Home = () => {
               <div className="flex flex-col items-center justify-center">
                 <Image src={nextLogo} alt="" className="h-12 w-12" />
                 <div>Next.js</div>
-                <div className="text-sm font-thin">Intermidiate</div>
+                <div className="text-sm font-thin">Intermediate</div>
                 <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={typeLogo} alt="" className="h-12 w-12" />
                 <div>Typescript</div>
-                <div className="text-sm font-thin">Intermidiate - Advanced</div>
+                <div className="text-sm font-thin">Intermediate - Advanced</div>
                 <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -609,7 +609,7 @@ const Home = () => {
                   className="h-12 w-12"
                 />
                 <div>tRPC</div>
-                <div className="text-sm font-thin">Intermidiate - Advanced</div>
+                <div className="text-sm font-thin">Intermediate - Advanced</div>
                 <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
@@ -648,7 +648,7 @@ const Home = () => {
               <div className="flex flex-col items-center justify-center ">
                 <Image src={nodeLogo} alt="" className="h-12 w-12" />
                 <div>Nodejs</div>
-                <div className="text-sm font-thin">Intermidiate</div>
+                <div className="text-sm font-thin">Intermediate</div>
                 <div className="text-sm font-thin">2.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
