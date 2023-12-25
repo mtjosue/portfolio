@@ -593,10 +593,14 @@ const Home = () => {
               <div className="flex flex-col items-center justify-center">
                 <Image src={nextLogo} alt="" className="h-12 w-12" />
                 <div>Next.js</div>
+                <div className="text-sm font-thin">Intermidiate</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={typeLogo} alt="" className="h-12 w-12" />
                 <div>Typescript</div>
+                <div className="text-sm font-thin">Intermidiate - Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image
@@ -605,46 +609,66 @@ const Home = () => {
                   className="h-12 w-12"
                 />
                 <div>tRPC</div>
+                <div className="text-sm font-thin">Intermidiate - Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={prismaLogo} alt="" className="h-12 w-12" />
                 <div>Prisma</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
 
               <div className="flex flex-col items-center justify-center">
                 <Image src={zusLogo} alt="" className="w-[96px]" />
                 <div>Zustand</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={tailwindLogo} alt="" className="h-12 w-12" />
                 <div>Tailwind</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
               </div>
             </div>
             <div className="col-span-1 space-y-6">
               <div className="flex flex-col items-center justify-center">
                 <Image src={reactLogo} alt="" className="h-12 w-12" />
                 <div>React</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">2.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={jsLogo} alt="" className="h-12 w-12" />
                 <div>Javascript</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">2.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center ">
                 <Image src={nodeLogo} alt="" className="h-12 w-12" />
                 <div>Nodejs</div>
+                <div className="text-sm font-thin">Intermidiate</div>
+                <div className="text-sm font-thin">2.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={mongoLogo} alt="" className="h-12 w-12" />
                 <div>MongoDB</div>
+                <div className="text-sm font-thin">Novice</div>
+                <div className="text-sm font-thin">6+ Months</div>
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-y-2">
+              <div className="flex flex-col items-center justify-center gap-y-0.5">
                 <Image src={reduxLogo} alt="" className="h-12 w-12" />
                 <div>Redux</div>
+                <div className="text-sm font-thin">Novice</div>
+                <div className="text-sm font-thin">6+ Months</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <Image src={cssLogo} alt="" className="h-12 w-12" />
                 <div>CSS</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">2.5+ Years</div>
               </div>
             </div>
           </animated.div>
