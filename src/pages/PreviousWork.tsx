@@ -5,8 +5,8 @@ const PreviousWork = () => {
   const router = useRouter();
   return (
     <div className="relative flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-slate-700 to-slate-900 px-9 py-10 text-gray-300">
-      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto">
-        <div className=" flex w-full justify-around text-sm text-gray-500">
+      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto lg:max-w-7xl">
+        <div className="flex w-full justify-around text-sm text-gray-500">
           <button
             onClick={() =>
               router
@@ -28,7 +28,7 @@ const PreviousWork = () => {
             Next
           </button>
         </div>
-        <div id="sectionOne" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionOne" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Project Overview
           </h2>
@@ -41,7 +41,7 @@ const PreviousWork = () => {
             <div>Josue R. Mata and Carlos de La Cruz</div>
           </div>
         </div>
-        <div id="sectionTwo" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionTwo" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Problem Identified
           </h2>
@@ -62,7 +62,7 @@ const PreviousWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionThree" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionThree" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Development Details
           </h2>
@@ -80,7 +80,7 @@ const PreviousWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFour" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFour" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Features Implemented
           </h2>
@@ -126,7 +126,7 @@ const PreviousWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFive" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFive" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">Future Plans</h2>
           <div className="space-x-3">
             <div className="font-semibold">Feedback:</div>
@@ -137,11 +137,13 @@ const PreviousWork = () => {
             <div>Free-time side project still under development.</div>
           </div>
         </div>
-        <div id="sectionSix" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionSix" className="flex flex-col gap-y-2">
           <h2 className="mb-3 text-2xl font-semibold text-gray-100">Demo</h2>
-          <video className="rounded-md" width="640" height="360" controls>
-            <source src={"/ntornosVid.mp4"} type="video/mp4" />
-          </video>
+          <div className="flex w-full justify-center">
+            <video className="rounded-md" width="640" height="360" controls>
+              <source src={"/ntornosVid.mp4"} type="video/mp4" />
+            </video>
+          </div>
         </div>
         <div className="flex w-full justify-around text-sm text-gray-500">
           <button

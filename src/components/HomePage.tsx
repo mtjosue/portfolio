@@ -588,6 +588,12 @@ const Home = () => {
                 <div className="text-sm font-thin">1.5+ Years</div>
               </div>
               <div className="flex flex-col items-center justify-center">
+                <Image src={tailwindLogo} alt="" className="h-12 w-12" />
+                <div>Tailwind</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">1.5+ Years</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
                 <Image
                   src={trpcLogo as StaticImageData}
                   alt=""
@@ -610,12 +616,6 @@ const Home = () => {
                 <div className="text-sm font-thin">Advanced</div>
                 <div className="text-sm font-thin">1.5+ Years</div>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={tailwindLogo} alt="" className="h-12 w-12" />
-                <div>Tailwind</div>
-                <div className="text-sm font-thin">Advanced</div>
-                <div className="text-sm font-thin">1.5+ Years</div>
-              </div>
             </div>
             <div className="col-span-1 space-y-6">
               <div className="flex flex-col items-center justify-center">
@@ -630,6 +630,13 @@ const Home = () => {
                 <div className="text-sm font-thin">Advanced</div>
                 <div className="text-sm font-thin">2.5+ Years</div>
               </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src={cssLogo} alt="" className="h-12 w-12" />
+                <div>CSS</div>
+                <div className="text-sm font-thin">Advanced</div>
+                <div className="text-sm font-thin">2.5+ Years</div>
+              </div>
+
               <div className="flex flex-col items-center justify-center ">
                 <Image src={nodeLogo} alt="" className="h-12 w-12" />
                 <div>Nodejs</div>
@@ -643,17 +650,11 @@ const Home = () => {
                 <div className="text-sm font-thin">6+ Months</div>
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-y-0.5">
+              <div className="flex flex-col items-center justify-center pt-2">
                 <Image src={reduxLogo} alt="" className="h-12 w-12" />
                 <div>Redux</div>
                 <div className="text-sm font-thin">Novice</div>
                 <div className="text-sm font-thin">6+ Months</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={cssLogo} alt="" className="h-12 w-12" />
-                <div>CSS</div>
-                <div className="text-sm font-thin">Advanced</div>
-                <div className="text-sm font-thin">2.5+ Years</div>
               </div>
             </div>
           </animated.div>
@@ -747,11 +748,9 @@ const Home = () => {
                 </div>
                 <div
                   style={{
-                    maxHeight: `${
-                      halfWidth * 2 > 1023 ? height + 71 : height - 10
-                    }px`,
+                    maxHeight: `558px`,
                   }}
-                  className={`scroll-hide w-fit overflow-y-auto rounded-md`}
+                  className={`scroll-hide w-fit overflow-y-auto rounded-md lg:max-h-[558px]`}
                 >
                   <Image src={ntornos} alt="" />
                 </div>
@@ -783,11 +782,9 @@ const Home = () => {
                 </div>
                 <div
                   style={{
-                    maxHeight: `${
-                      halfWidth * 2 > 1023 ? height + 71 : height - 10
-                    }px`,
+                    maxHeight: `558px`,
                   }}
-                  className={`scroll-hide w-fit overflow-y-auto rounded-md`}
+                  className={`scroll-hide w-fit overflow-y-auto rounded-md lg:max-h-[558px]`}
                 >
                   <Image src={gm3052} alt="" />
                 </div>

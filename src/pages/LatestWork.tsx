@@ -5,8 +5,8 @@ const LatestWork = () => {
   const router = useRouter();
   return (
     <div className="relative flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-slate-700 to-slate-900 px-9 py-10 text-gray-300">
-      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto">
-        <div className=" flex w-full justify-around text-sm text-gray-500">
+      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto lg:max-w-7xl">
+        <div className="flex w-full justify-around text-sm text-gray-500">
           <button
             onClick={() =>
               router.push("/").catch(() => console.log("Error in back form p1"))
@@ -26,7 +26,7 @@ const LatestWork = () => {
             Next
           </button>
         </div>
-        <div id="sectionOne" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionOne" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Project Overview
           </h2>
@@ -46,7 +46,7 @@ const LatestWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionTwo" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionTwo" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Problem Identified
           </h2>
@@ -64,7 +64,7 @@ const LatestWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionThree" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionThree" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">Solution</h2>
           <div className="space-x-3">
             <div className="font-semibold">Approach:</div>
@@ -87,7 +87,7 @@ const LatestWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFour" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFour" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Development Details
           </h2>
@@ -105,7 +105,7 @@ const LatestWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFive" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFive" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Features Implemented
           </h2>
@@ -128,7 +128,7 @@ const LatestWork = () => {
             </div>
           </div>
         </div>
-        <div id="sectionSix" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionSix" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Testing and Iteration
           </h2>
@@ -145,7 +145,7 @@ const LatestWork = () => {
             <div>Completed in a month and a half.</div>
           </div>
         </div>
-        <div id="sectionSeven" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionSeven" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">Future Plans</h2>
           <div className="space-x-3">
             <div className="font-semibold">Feedback:</div>
@@ -156,9 +156,9 @@ const LatestWork = () => {
             <div>Potential growth through other merits.</div>
           </div>
         </div>
-        <div id="sectionEight" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionEight" className="flex flex-col gap-y-2">
           <h2 className="mb-3 text-2xl font-semibold text-gray-100">Visit</h2>
-          <div className="space-x-3">
+          <div className="flex w-full justify-center">
             <div className="ml-3 font-semibold">
               <a
                 href="https://p-nine.vercel.app/"

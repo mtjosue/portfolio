@@ -7,7 +7,7 @@ const History = () => {
   const router = useRouter();
   return (
     <div className="relative flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-slate-700 to-slate-900 px-9 py-10 text-gray-300">
-      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto">
+      <div className="scroll-hide flex max-w-md flex-col gap-y-6 overflow-y-auto lg:max-w-7xl">
         <div className=" flex w-full justify-around text-sm text-gray-500">
           <button
             onClick={() =>
@@ -38,7 +38,7 @@ const History = () => {
             Next
           </button>
         </div>
-        <div id="sectionOne" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionOne" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">Overview</h2>
           <div className="space-x-3">
             <div className="font-semibold">Company:</div>
@@ -49,7 +49,7 @@ const History = () => {
             <div>Frontend Developer</div>
           </div>
         </div>
-        <div id="sectionTwo" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionTwo" className="flex flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Project Scope
           </h2>
@@ -74,7 +74,7 @@ const History = () => {
             </div>
           </div>
         </div>
-        <div id="sectionThree" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionThree" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Challenges Faced
           </h2>
@@ -100,7 +100,7 @@ const History = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFour" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFour" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">Achievements</h2>
           <div className="space-x-3">
             <div className="font-semibold">Skills Development:</div>
@@ -118,7 +118,7 @@ const History = () => {
             </div>
           </div>
         </div>
-        <div id="sectionFive" className="flex max-w-md flex-col gap-y-2">
+        <div id="sectionFive" className="flex  flex-col gap-y-2">
           <h2 className="text-2xl font-semibold text-gray-100">
             Work Environment
           </h2>
@@ -135,7 +135,7 @@ const History = () => {
             </div>
           </div>
         </div>
-        <div id="sectionSix" className="flex max-w-md justify-center gap-y-2">
+        <div id="sectionSix" className="flex  justify-center gap-y-2">
           <Image src={gm305} alt="" className="rounded-md" />
         </div>
         <div className=" flex w-full justify-around text-sm text-gray-500">
