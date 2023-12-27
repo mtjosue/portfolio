@@ -712,9 +712,10 @@ const Home = () => {
                 </div>
                 <div
                   style={{
-                    maxHeight: `${
-                      halfWidth * 2 > 1023 ? height + 71 : height - 10
-                    }px`,
+                    maxHeight: `${Math.min(
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10,
+                      558,
+                    )}px`,
                   }}
                   className={`scroll-hide w-fit overflow-y-auto rounded-md`}
                 >
@@ -748,7 +749,10 @@ const Home = () => {
                 </div>
                 <div
                   style={{
-                    maxHeight: `558px`,
+                    maxHeight: `${Math.min(
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10,
+                      558,
+                    )}px`,
                   }}
                   className={`scroll-hide w-fit overflow-y-auto rounded-md lg:max-h-[558px]`}
                 >
@@ -782,7 +786,10 @@ const Home = () => {
                 </div>
                 <div
                   style={{
-                    maxHeight: `558px`,
+                    maxHeight: `${Math.min(
+                      halfWidth * 2 > 1023 ? height + 71 : height - 10,
+                      558,
+                    )}px`,
                   }}
                   className={`scroll-hide w-fit overflow-y-auto rounded-md lg:max-h-[558px]`}
                 >
