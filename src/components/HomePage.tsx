@@ -568,21 +568,6 @@ const Home = () => {
         </div>
 
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center">
-          <h2
-            className={classNames(
-              "absolute top-5 font-extralight",
-              `left-[${halfWidth}]`,
-            )}
-          >
-            <animated.div
-              className={classNames("")}
-              style={{
-                opacity: opa5,
-              }}
-            >
-              Skills
-            </animated.div>
-          </h2>
           <animated.div
             className="grid grid-cols-2 gap-x-12 gap-y-3"
             style={{
