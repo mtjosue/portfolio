@@ -290,7 +290,7 @@ const Home = () => {
           <button
             onClick={() => {
               conRef.current?.scrollTo({
-                top: height + 1325, // Specify the vertical scroll position in pixels
+                top: height + 1350, // Specify the vertical scroll position in pixels
                 left: 0, // Specify the horizontal scroll position in pixels
                 behavior: "smooth", // Optional: Use smooth scrolling
               });
@@ -326,7 +326,7 @@ const Home = () => {
           <button
             onClick={() => {
               conRef.current?.scrollTo({
-                top: height + 2400, // Specify the vertical scroll position in pixels
+                top: height + 5000, // Specify the vertical scroll position in pixels
                 left: 0, // Specify the horizontal scroll position in pixels
                 behavior: "smooth", // Optional: Use smooth scrolling
               });
@@ -568,21 +568,6 @@ const Home = () => {
         </div>
 
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center">
-          <h2
-            className={classNames(
-              "absolute top-5 font-extralight",
-              `left-[${halfWidth}]`,
-            )}
-          >
-            <animated.div
-              className={classNames("")}
-              style={{
-                opacity: opa5,
-              }}
-            >
-              Skills
-            </animated.div>
-          </h2>
           <animated.div
             className="grid grid-cols-2 gap-x-12 gap-y-3"
             style={{
@@ -674,7 +659,7 @@ const Home = () => {
           </animated.div>
         </div>
 
-        <div className="relative flex h-[100vh] w-full flex-col items-center justify-center">
+        <div className="relative mt-40 flex h-[100vh] w-full flex-col items-center justify-center md:mt-0">
           <h2
             className={classNames(
               "absolute top-5 font-extralight",
